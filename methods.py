@@ -123,11 +123,12 @@ def character_information(id):
     d = dict()
 
     character_request = requests.get(url).json()
-    #print(character_request)
+    print(character_request)
     d["name"], d["status"] = character_request["name"], character_request["status"]
     d["species"], d["type"] = character_request["species"], character_request["type"]
     d["gender"] = character_request["gender"]
     d["origin"] = character_request["origin"]  # Includes Name and URL
+    d["origin"]["id"] = character_request["origin"]["url"].split('/')[-1] 
     d["location"] = character_request["location"]  # Includes Name and URL
     d["location"]["id"] = character_request["location"]["url"].split('/')[-1]
     d["image"] = character_request["image"]  # Image URL
@@ -137,7 +138,7 @@ def character_information(id):
         name = episode_name(episode)
         d_temp = {"name": name, "url": episode, "id": episode.split('/')[-1]}
         d["episode"].append(d_temp)
-    print(d)
+    #print(d)
 
     final_information.append(d)
     return final_information
@@ -203,3 +204,5 @@ def text_search(query):
     query_results["location"] = location_results
 
     return query_results
+
+x = character_information(404)
