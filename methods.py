@@ -7,7 +7,8 @@ import json
 def all_episodes():
 
     current_page = 1
-    base_url = 'https://rickandmortyapi.com/api/episode?page='
+    #base_url = 'https://rickandmortyapi.com/api/episode?page='
+    base_url = 'https://integracion-rick-morty-api.herokuapp.com/api/episode?page='
     url = base_url + str(current_page)
     all_episodes_information = list()
     final_information = list()
@@ -33,7 +34,8 @@ def all_episodes():
 def all_locations():
 
     current_page = 1
-    base_url = 'https://rickandmortyapi.com/api/location?page='
+    #base_url = 'https://rickandmortyapi.com/api/location?page='
+    base_url = 'https://integracion-rick-morty-api.herokuapp.com/api/location?page='
     url = base_url + str(current_page)
     all_locations_information = list()
     final_information = list()
@@ -60,7 +62,8 @@ def all_locations():
 def all_characters():
 
     current_page = 1
-    base_url = 'https://rickandmortyapi.com/api/character?page='
+    #base_url = 'https://rickandmortyapi.com/api/character?page='
+    base_url = 'https://integracion-rick-morty-api.herokuapp.com/api/character?page='
     url = base_url + str(current_page)
     all_characters_information = list()
     final_information = list()
@@ -87,7 +90,8 @@ def all_characters():
 
 def episode_information(id):
 
-    base_url = 'https://rickandmortyapi.com/api/episode/'
+    #base_url = 'https://rickandmortyapi.com/api/episode/'
+    base_url = 'https://integracion-rick-morty-api.herokuapp.com/api/episode/'
     url = base_url + str(id)
     final_information = list()
     d = dict()
@@ -117,7 +121,8 @@ def character_name(url):
 
 def character_information(id):
 
-    base_url = 'https://rickandmortyapi.com/api/character/'
+    #base_url = 'https://rickandmortyapi.com/api/character/'
+    base_url = 'https://integracion-rick-morty-api.herokuapp.com/api/character/'
     url = base_url + str(id)
     final_information = list()
     d = dict()
@@ -154,7 +159,8 @@ def episode_name(url):
 
 def location_information(id):
 
-    base_url = 'https://rickandmortyapi.com/api/location/'
+    #base_url = 'https://rickandmortyapi.com/api/location/'
+    base_url = 'https://integracion-rick-morty-api.herokuapp.com/api/location/'
     url = base_url + str(id)
     final_information = list()
     d = dict()
@@ -205,4 +211,3 @@ def text_search(query):
 
     return query_results
 
-x = character_information(404)
